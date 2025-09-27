@@ -1,0 +1,38 @@
+.text-balance {
+  text-wrap: balance;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #dcff7d 0%, #e0d800 50%, #d4ff00 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #dcff7d 0%, #e0d800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.input {
+  @apply border-input rounded-lg border-[0.5px] font-medium ring-0 focus-within:border-none;
+}
+
+.input-group {
+  @apply rounded border-none ring-0 focus-within:border-none;
+}
