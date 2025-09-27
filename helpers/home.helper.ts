@@ -82,3 +82,16 @@ export const BEST_SELLERS: BestSellerType[] = [
     link: "/eyesyte-battery-camera",
   },
 ];
+
+type FeaturesType = {
+  label: string;
+  value: string;
+};
+
+export const FEATURES: FeaturesType[] = [
+  { label: "MTN Fibrex", value: "mtn-fibrex" },
+  { label: "Devices", value: "devices" },
+  { label: "Data Bundles", value: "data-bundles" },
+  { label: "Business", value: "business" },
+  { label: "Cloud", value: "cloud" },
+];

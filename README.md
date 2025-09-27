@@ -110,7 +110,7 @@ NEXT_PUBLIC_MTN_ID=???
 Flat folder structure for easy navigation.
 
 ```
-trustcrow-backoffice/
+mtn/
 ├── app/                # App router (Next.js routing)
 ├── components/         # Reusable UI components
 │  ├── containers/      # For custom components e.g. Footer, Header etc

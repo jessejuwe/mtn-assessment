@@ -1,5 +1,7 @@
 import { StaticImageData } from "next/image";
 
+import fibrex from "@/public/assets/features/fibrex.png";
+
 import facebook from "@/public/assets/footer/facebook.svg";
 import instagram from "@/public/assets/footer/instagram.svg";
 import linkedin from "@/public/assets/footer/linkedin.svg";
@@ -14,6 +16,8 @@ import logo from "@/public/assets/shared/logo.svg";
 import notFound from "@/public/assets/shared/404.svg";
 
 interface Images {
+  fibrex: StaticImageData;
+
   facebook: StaticImageData;
   instagram: StaticImageData;
   linkedin: StaticImageData;
@@ -29,6 +33,8 @@ interface Images {
 }
 
 export const Images: Images = {
+  fibrex,
+
   facebook,
   instagram,
   linkedin,

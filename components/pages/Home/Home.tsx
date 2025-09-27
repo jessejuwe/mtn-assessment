@@ -23,20 +23,20 @@ const Features = dynamic(() => import("./Features"), { ssr: false, loading: () =
 
 function Home() {
   return (
-    <main className="border-b-border bg-muted overflow-x-hidden border-b px-8 transition-all lg:px-12 xl:px-24 2xl:px-24">
+    <main className="bg-muted overflow-x-hidden transition-all">
       <motion.section
         id="hero"
         initial="hidden"
         animate="show"
         variants={containerVariants}
-        className="landscapeShort:h-[50vh] mb-12 block h-screen md:h-[75vh] lg:h-[60vh] lg:max-h-[520px]"
+        className="mb-12 block lg:max-h-[520px] xl:h-[60vh]"
       >
         <div className="mb-4">
           <Link href="/fibrex">
             <Image
               src={images.banner}
               alt="Hero Banner"
-              className="object-cover object-top"
+              className="object-cover object-center"
               placeholder="blur"
               blurDataURL={placeholders.banner}
             />
@@ -49,10 +49,10 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Stack direction="row" flexWrap="wrap" gap={4}>
+          <div className="grid grid-cols-3 md:grid-cols-6">
             {CATEGORIES.map((category, index) => (
               <Link key={index} href={category.link}>
-                <Box className="hover:bg-primary flex size-36 items-center justify-center rounded-xl transition-all hover:text-black">
+                <Box className="hover:bg-primary flex size-32 items-center justify-center rounded-xl transition-all hover:text-black lg:size-36">
                   <Stack align="center" gap={2}>
                     <category.icon size={64} strokeWidth={1.5} />
                     <p className="font-semibold">{category.label}</p>
@@ -60,12 +60,14 @@ function Home() {
                 </Box>
               </Link>
             ))}
-          </Stack>
+          </div>
         </motion.div>
       </motion.section>
 
-      <BestSellers />
-      <Features />
+      <div className="px-4 lg:px-12 xl:px-24 2xl:px-24">
+        <BestSellers />
+        <Features />
+      </div>
     </main>
   );
 }

@@ -39,7 +39,7 @@ export default function Header() {
     <header className="w-full">
       {/* Yellow banner */}
       <motion.div
-        className="flex h-12 w-full items-center justify-center bg-[#f4c210] px-10"
+        className="flex h-12 w-full items-center justify-center bg-[#f4c210] lg:px-10"
         initial={{ y: 0, opacity: 1 }}
         animate={isScrolled ? { y: -60, opacity: 0 } : { y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -54,22 +54,22 @@ export default function Header() {
           modules={[Autoplay]}
         >
           <SwiperSlide className="flex h-full w-full items-center justify-center bg-black">
-            <div className="mx-auto flex h-full w-[60%] items-center-safe justify-center-safe bg-white text-center text-3xl font-bold text-black">
+            <div className="mx-auto flex h-full w-[90%] items-center-safe justify-center-safe bg-white text-center text-lg font-bold text-black lg:w-[60%] lg:text-3xl">
               Revolutionize your internet experience
             </div>
           </SwiperSlide>
           <SwiperSlide className="flex h-full w-full items-center justify-center bg-black">
-            <div className="flex h-full items-center-safe justify-center-safe gap-1.5 text-center text-4xl text-white">
+            <div className="flex h-full items-center-safe justify-center-safe gap-1.5 text-center text-lg text-white lg:text-4xl">
               <span className="font-bold">with 4G Router</span>Premium
             </div>
           </SwiperSlide>
           <SwiperSlide className="flex h-full w-full items-center justify-center bg-transparent">
-            <div className="flex h-full items-center-safe justify-center-safe gap-1.5 text-center text-4xl text-black">
+            <div className="flex h-full items-center-safe justify-center-safe gap-1.5 text-center text-lg text-black lg:text-4xl">
               Dial <span className="font-bold">217</span>
             </div>
           </SwiperSlide>
           <SwiperSlide className="flex h-full w-full items-center justify-center bg-transparent">
-            <div className="flex h-full items-center-safe justify-center-safe text-center text-3xl font-bold text-black">
+            <div className="flex h-full items-center-safe justify-center-safe text-center text-lg font-bold text-black lg:text-3xl">
               or visit mtnbroadband.ng@mtn.com
             </div>
           </SwiperSlide>
@@ -83,35 +83,37 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className={cn([
-          "bg-accent mx-auto px-8 py-4 transition-all lg:px-12 xl:px-24 2xl:px-24",
+          "bg-accent mx-auto px-4 py-4 transition-all lg:px-12 xl:px-24 2xl:px-24",
           isScrolled ? "fixed top-0 right-0 left-0 z-50 shadow-md" : "relative",
         ])}
       >
         <div className="flex h-9 w-full items-center justify-between">
-          {/* Mobile Menu */}
-          <MobileNav />
+          <div className="flex items-center justify-start gap-1">
+            {/* Mobile Menu */}
+            <MobileNav />
 
-          {/* Logo */}
-          <motion.div
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <Link href="/" className="flex items-center space-x-2" prefetch={false}>
-              <Image
-                className="h-auto w-20"
-                src={colorMode === "light" ? images.icon : images.icon2}
-                alt="MTN Logo"
-                priority
-                width={120}
-                height={30}
-                sizes="(max-width: 768px) 100vw, 160px"
-              />
-            </Link>
-          </motion.div>
+            {/* Logo */}
+            <motion.div
+              className="flex items-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Link href="/" className="flex items-center" prefetch={false}>
+                <Image
+                  className="h-auto w-16"
+                  src={colorMode === "light" ? images.icon : images.icon2}
+                  alt="MTN Logo"
+                  priority
+                  width={120}
+                  height={30}
+                  sizes="(max-width: 768px) 100vw, 160px"
+                />
+              </Link>
+            </motion.div>
+          </div>
 
           {/* Menu and Input */}
-          <div className="flex items-center justify-start gap-2">
+          <div className="hidden items-center justify-start gap-2 lg:flex">
             <AllProductsMenu />
 
             <InputGroup
@@ -135,7 +137,7 @@ export default function Header() {
                     <Avatar.Fallback />
                   </Avatar.Root>
 
-                  <div className="flex items-center justify-start gap-2 text-sm font-medium">
+                  <div className="hidden items-center justify-start gap-2 text-sm font-medium lg:flex">
                     Account <ChevronDown size={16} />
                   </div>
                 </Stack>
@@ -176,6 +178,17 @@ export default function Header() {
               </Link>
             </IconButton>
           </div>
+        </div>
+
+        {/* Mobile Input */}
+        <div className="mt-2 block lg:hidden">
+          <InputGroup
+            colorPalette="primary"
+            className="input-group"
+            startElement={<Search size={18} strokeWidth={1.5} />}
+          >
+            <Input className="input" placeholder="Search by products, brands & categories" />
+          </InputGroup>
         </div>
       </motion.nav>
 

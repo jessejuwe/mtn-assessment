@@ -17,12 +17,17 @@ export default function BestSellers() {
 
   return (
     <div className="mb-20 block w-full">
-      <div className="mb-8 flex items-center justify-between px-4">
-        <p className="text-[40px] font-extrabold">Best Sellers</p>
+      <div className="mb-8 flex items-center justify-between lg:px-4">
+        <p className="text-[26px] font-bold lg:text-[40px] lg:font-extrabold">Best Sellers</p>
 
         {/* Controls */}
-        <Stack align="center" colorPalette={{ _light: "black", _dark: "primary" }} direction="row" gap={8}>
-          <Stack align="center" direction="row" gap={4}>
+        <Stack
+          align="center"
+          colorPalette={{ _light: "black", _dark: "primary" }}
+          direction="row"
+          gap={{ base: 2, md: 4, lg: 8 }}
+        >
+          <Stack align="center" direction="row" gap={{ base: 2, lg: 4 }}>
             <IconButton
               aria-label="Previous"
               borderColor={{ _light: "black", _dark: "primary" }}
@@ -82,13 +87,13 @@ export default function BestSellers() {
         <Swiper
           id="best-seller-swiper"
           breakpoints={{
-            0: { slidesPerView: 1.1, spaceBetween: 12 },
-            390: { slidesPerView: 1.2, spaceBetween: 12 },
-            412: { slidesPerView: 1.2, spaceBetween: 12 },
-            540: { slidesPerView: 1.5, spaceBetween: 12 },
-            768: { slidesPerView: 2.1, spaceBetween: 12 },
-            820: { slidesPerView: 2.2, spaceBetween: 12 },
-            1024: { slidesPerView: 2.7, spaceBetween: 12 },
+            0: { slidesPerView: 1.1, spaceBetween: 6 },
+            390: { slidesPerView: 1.2, spaceBetween: 6 },
+            412: { slidesPerView: 1.2, spaceBetween: 6 },
+            540: { slidesPerView: 1.5, spaceBetween: 6 },
+            768: { slidesPerView: 2.5, spaceBetween: 12 },
+            820: { slidesPerView: 2.8, spaceBetween: 12 },
+            1024: { slidesPerView: 3.3, spaceBetween: 12 },
             1280: { slidesPerView: 3.5, spaceBetween: 12 },
             1440: { slidesPerView: 4.7, spaceBetween: 12 },
           }}
@@ -126,7 +131,7 @@ export default function BestSellers() {
               >
                 <Box
                   className={cn([
-                    "flex h-[360px] w-[250px] flex-col items-start justify-between rounded-xl p-6",
+                    "flex h-[360px] w-[270px] flex-col items-start justify-between rounded-xl p-6",
                     item.className,
                   ])}
                 >
