@@ -1,6 +1,6 @@
 # MTN eShop
 
-Cloning the landing page for MTN eShop
+Cloning the landing page for [MTN eShop](https://shop.mtn.ng/)
 
 ## Table of Contents
 
